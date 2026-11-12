@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportar Rescate | Sistema de Control de Rescate y Adopción</title>
+</head>
+<body>
+    <header>
+        <img src="assets/img/logo-refugio.png" alt="Logotipo del Refugio de Rescate Animal" width="80" height="80">
+        <h1>Sistema de Control de Rescate y Adopción</h1>
+        <p>Registro de nuevos ingresos y emergencias veterinarias</p>
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Inicio (Dashboard)</a></li>
+                <li><a href="reportar.html">Reportar Rescate</a></li>
+                <li><a href="rescates.html">Casos Registrados</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Formulario de Registro de Animal Rescatado</h2>
+            <p>Complete todos los campos requeridos para asignar un código de seguimiento y prioridad médica.</p>
+
+            <form action="rescates.html" method="get">
+                <fieldset>
+                    <legend>Datos Generales del Caso</legend>
+
+                    <p>
+                        <label for="titulo-caso">Título del caso o nombre provisional:</label><br>
+                        <input type="text" id="titulo-caso" name="titulo_caso" placeholder="Ej. Cachorro encontrado en Av. Universitaria" required>
+                    </p>
+
+                    <p>
+                        <label for="categoria-animal">Categoría de especie:</label><br>
+                        <select id="categoria-animal" name="categoria_animal" required>
+                            <option value="">-- Seleccione una categoría --</option>
+                            <option value="perros">Perros</option>
+                            <option value="gatos">Gatos</option>
+                            <option value="fauna_silvestre">Fauna Silvestre</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Nivel de Urgencia Médica</legend>
+                    <p>
+                        <input type="radio" id="urgencia-alta" name="urgencia_medica" value="alta" required>
+                        <label for="urgencia-alta">Alta (Riesgo vital, heridas graves o atropellamiento)</label><br>
+
+                        <input type="radio" id="urgencia-media" name="urgencia_medica" value="media">
+                        <label for="urgencia-media">Media (Desnutrición, infecciones leves o lesiones menores)</label><br>
+
+                        <input type="radio" id="urgencia-baja" name="urgencia_medica" value="baja">
+                        <label for="urgencia-baja">Baja (Animal sano en situación de abandono preventivo)</label>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Evaluación Inicial</legend>
+                    <p>
+                        <label for="descripcion-estado">Descripción detallada del estado en que se encontró:</label><br>
+                        <textarea id="descripcion-estado" name="descripcion_estado" rows="5" cols="50" placeholder="Describa ubicación exacta, síntomas visibles, comportamiento y condiciones del entorno..." required></textarea>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Registrar Caso de Rescate</button>
+                    <button type="reset">Limpiar Formulario</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sistema de Control de Rescate y Adopción. Todos los derechos reservados.</p>
+        <p>Contacto institucional: <a href="mailto:contacto@rescateanimal.org">contacto@rescateanimal.org</a></p>
+    </footer>
+</body>
+</html>
